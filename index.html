@@ -201,9 +201,9 @@
       </div>
       <p class="text-gray-200 text-xs md:text-sm leading-relaxed mb-4">
         15 randomized questions selected from the comprehensive Unit 6 syllabus. Pass 3 milestones:
-        <span class="text-yellow-400 font-black">Q5 ($2,000)</span>, 
-        <span class="text-yellow-400 font-black">Q10 ($22,000)</span>, and 
-        <span class="text-yellow-400 font-black">Q15 ($150,000)</span> using 4 classic lifelines!
+        <span class="text-yellow-400 font-black">Q5 (2.000.000₫)</span>, 
+        <span class="text-yellow-400 font-black">Q10 (22.000.000₫)</span>, and 
+        <span class="text-yellow-400 font-black">Q15 (250.000.000₫)</span> using 4 classic lifelines!
       </p>
 
       <div class="grid grid-cols-4 gap-2 pt-2 border-t border-blue-900/80 text-[11px] md:text-xs font-bold text-cyan-300">
@@ -229,7 +229,7 @@
         <h2 class="font-extrabold text-xs md:text-sm text-yellow-400 uppercase tracking-widest">Unit 6 Review</h2>
         <div class="flex items-center gap-1.5 md:gap-2">
           <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-          <span class="text-[11px] md:text-xs font-semibold text-cyan-300 tracking-wider" id="current-prize-display">Question 1: $200</span>
+          <span class="text-[11px] md:text-xs font-semibold text-cyan-300 tracking-wider" id="current-prize-display">Question 1: 200.000₫</span>
         </div>
       </div>
     </div>
@@ -323,9 +323,9 @@
     </div>
 
     <!-- MONEY LADDER (DESKTOP) -->
-    <aside id="ladder-panel" class="hidden lg:flex flex-col justify-between bg-gradient-to-b from-blue-950/70 via-slate-950/80 to-black/90 p-3 rounded-2xl border border-blue-500/30 backdrop-blur-xl w-60 h-[490px] shadow-2xl">
+    <aside id="ladder-panel" class="hidden lg:flex flex-col justify-between bg-gradient-to-b from-blue-950/70 via-slate-950/80 to-black/90 p-3 rounded-2xl border border-blue-500/30 backdrop-blur-xl w-64 h-[490px] shadow-2xl">
       <div class="text-center font-black text-yellow-400 pb-2 border-b border-blue-900 text-xs tracking-widest flex items-center justify-center gap-2">
-        <i class="fa-solid fa-trophy text-amber-400"></i> PRIZE LADDER
+        <i class="fa-solid fa-trophy text-amber-400"></i> PRIZE LADDER (VND)
       </div>
       <div id="ladder-items" class="flex flex-col-reverse justify-between flex-1 py-1">
         <!-- Rendered by JS -->
@@ -335,9 +335,9 @@
 
   <!-- LADDER DRAWER (MOBILE) -->
   <div id="ladder-modal" class="fixed inset-0 bg-black/85 z-50 hidden flex justify-end">
-    <div class="bg-slate-950 w-64 h-full p-4 flex flex-col justify-between border-l border-blue-500/40">
+    <div class="bg-slate-950 w-72 h-full p-4 flex flex-col justify-between border-l border-blue-500/40">
       <div class="flex justify-between items-center border-b border-gray-800 pb-2">
-        <span class="font-black text-yellow-400 text-sm tracking-wider">PRIZE MONEY</span>
+        <span class="font-black text-yellow-400 text-sm tracking-wider">PRIZE MONEY (VND)</span>
         <button onclick="toggleLadder()" class="text-white text-2xl px-2">&times;</button>
       </div>
       <div id="ladder-items-mobile" class="flex flex-col-reverse justify-between flex-1 py-3 text-xs"></div>
@@ -450,7 +450,7 @@
       <div class="bg-black/60 p-4 rounded-2xl border border-yellow-400/40 mb-6">
         <div class="text-[11px] text-gray-400 uppercase tracking-widest">TOTAL PRIZE MONEY</div>
         <div id="end-money" class="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-amber-400 to-yellow-500 mt-1">
-          $0
+          0₫
         </div>
       </div>
 
@@ -462,10 +462,10 @@
 
   <script>
     // =========================================================================
-    // 113 QUESTIONS MASTER DATABASE (SPLIT INTO DIFFICULTY TIERS)
+    // MASTER QUESTION DATABASE
     // =========================================================================
     const masterQuestionBank = [
-      // --- TIER 1: EASY (Basics, straightforward gerunds/infinitives, common vocabulary) ---
+      // --- TIER 1: EASY ---
       { q: "Many people in Vietnam enjoy spending time ______, especially during hot weather or rainy seasons.", options: ["A. outdoors", "B. indoors", "C. in the garden", "D. under"], answer: 1, tier: 1 },
       { q: "Living ______ have improved significantly in recent years, with more access to modern housing and amenities.", options: ["A. conditions", "B. relationships", "C. opportunities", "D. traditions"], answer: 0, tier: 1 },
       { q: "Before motorbikes became popular, bicycles were the main mode of ______ for many Vietnamese people in rural areas.", options: ["A. communication", "B. entertainment", "C. activities", "D. transportation"], answer: 3, tier: 1 },
@@ -504,7 +504,7 @@
       { q: "We decided ______ the living room ourselves.", options: ["A. decorate", "B. decorating", "C. to decorate", "D. decorated"], answer: 2, tier: 1 },
       { q: "They're considering ______ their old kitchen.", options: ["A. renovate", "B. to renovate", "C. renovating", "D. renovated"], answer: 2, tier: 1 },
 
-      // --- TIER 2: MEDIUM (Contextual vocabulary, word formation, synonyms & antonyms) ---
+      // --- TIER 2: MEDIUM ---
       { q: "The Vietnamese society is becoming more ______, allowing people to express their opinions and participate in decision-making processes.", options: ["A. stressful", "B. convenient", "C. democratic", "D. modern"], answer: 2, tier: 2 },
       { q: "Young people in Vietnam are encouraged to ______ higher education and career opportunities.", options: ["A. pursue", "B. do", "C. get", "D. feel"], answer: 0, tier: 2 },
       { q: "______ is respected in Vietnamese culture, and people are mindful of not intruding on others' personal space.", options: ["A. Time", "B. Understanding", "C. Privacy", "D. Opportunity"], answer: 2, tier: 2 },
@@ -550,7 +550,7 @@
       { q: "We really like the photo ______ in the school's 70th anniversary.", options: ["A. exhibit", "B. exhibition", "C. exhibited", "D. exhibiting"], answer: 1, tier: 2 },
       { q: "Nowadays, it is easy to get to the ______ areas by tram.", options: ["A. suburb", "B. suburban", "C. suburbs", "D. suburbia"], answer: 1, tier: 2 },
 
-      // --- TIER 3: HARD (Word Stress phonetics, passive gerunds/infinitives, complex structures) ---
+      // --- TIER 3: HARD ---
       { q: "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.", options: ["A. shuffle", "B. workflow", "C. offline", "D. flavor"], answer: 2, tier: 3 },
       { q: "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.", options: ["A. annoy", "B. fragile", "C. frankly", "D. frozen"], answer: 0, tier: 3 },
       { q: "Mark the letter A, B, C, or D to indicate the word that differs from the other three in the position of primary stress.", options: ["A. influence", "B. reflection", "C. fluency", "D. flexible"], answer: 1, tier: 3 },
@@ -585,10 +585,11 @@
       { q: "Quang would like ______ how to play the guitar because he wants ______ himself through music.", options: ["A. learning – expressing", "B. to learn – to express", "C. learn – express", "D. to learning – to expressing"], answer: 1, tier: 3 }
     ];
 
+    // VIETNAMESE CURRENCY LADDER (BOTTOM TO TOP)
     const moneyLadder = [
-      "200", "400", "600", "1,000", "2,000",
-      "3,000", "6,000", "10,000", "14,000", "22,000",
-      "30,000", "40,000", "60,000", "85,000", "150,000"
+      "200.000", "400.000", "600.000", "1.000.000", "2.000.000",
+      "3.000.000", "6.000.000", "10.000.000", "14.000.000", "22.000.000",
+      "30.000.000", "40.000.000", "80.000.000", "150.000.000", "250.000.000"
     ];
 
     let currentQuestions = [];
@@ -596,13 +597,11 @@
     let isAnswering = false;
     let phoneInterval = null;
 
-    // Helper: Pick random N items from an array
     function getRandomSubarray(arr, size) {
       const shuffled = [...arr].sort(() => 0.5 - Math.random());
       return shuffled.slice(0, size);
     }
 
-    // Generate 15-question set: 5 Easy (Tier 1), 5 Medium (Tier 2), 5 Hard (Tier 3)
     function generateGameQuestions() {
       const tier1 = masterQuestionBank.filter(item => item.tier === 1);
       const tier2 = masterQuestionBank.filter(item => item.tier === 2);
@@ -836,7 +835,7 @@
               ${dot}
               <span class="w-5">${i + 1}</span>
             </div>
-            <span class="tracking-wide">$${money}</span>
+            <span class="tracking-wide">${money}₫</span>
           </div>
         `;
       });
@@ -859,7 +858,7 @@
           row.className = `flex justify-between items-center px-2.5 py-0.5 rounded-lg ${isMilestone ? 'text-yellow-400 font-black text-xs md:text-sm' : 'text-gray-400 font-semibold text-[11px] md:text-xs'}`;
         }
       }
-      document.getElementById("current-prize-display").innerText = `Question ${currentQ + 1}: $${moneyLadder[currentQ]}`;
+      document.getElementById("current-prize-display").innerText = `Question ${currentQ + 1}: ${moneyLadder[currentQ]}₫`;
     }
 
     // =========================================================================
@@ -953,8 +952,6 @@
     // =========================================================================
     // LIFELINES
     // =========================================================================
-
-    // 1. 50:50 Lifeline
     function use5050() {
       SoundEngine.playLifeline();
       const q = currentQuestions[currentQ];
@@ -972,14 +969,13 @@
       setMCDialogue("Two incorrect options have been cleared away. You now have a 50:50 chance!");
     }
 
-    // 2. Ask the Audience
     function useAudience() {
       SoundEngine.playLifeline();
       const q = currentQuestions[currentQ];
       const correctIdx = q.answer;
 
       let pcts = [0, 0, 0, 0];
-      const correctPct = Math.floor(Math.random() * 26) + 60; // 60% - 85%
+      const correctPct = Math.floor(Math.random() * 26) + 60;
       pcts[correctIdx] = correctPct;
 
       let remain = 100 - correctPct;
@@ -1005,7 +1001,6 @@
       setMCDialogue("The studio audience has cast their votes on their keypads!");
     }
 
-    // 3. Phone a Friend (Mark, English Teacher)
     function usePhoneAI() {
       SoundEngine.playLifeline();
       const q = currentQuestions[currentQ];
@@ -1049,7 +1044,6 @@
       }, 1600);
     }
 
-    // 4. Ask the AI English Tutor
     function useExpertAI() {
       SoundEngine.playLifeline();
       const q = currentQuestions[currentQ];
@@ -1081,7 +1075,6 @@
       document.getElementById("ladder-modal").classList.toggle("hidden");
     }
 
-    // Walk away / Surrender
     function surrender() {
       if (confirm("Are you sure you want to stop and walk away with your current prize money?")) {
         endGame(true);
@@ -1089,9 +1082,9 @@
     }
 
     function getGuaranteedPrize(index) {
-      if (index >= 9) return "$22,000";
-      if (index >= 4) return "$2,000";
-      return "$0";
+      if (index >= 9) return "22.000.000₫";
+      if (index >= 4) return "2.000.000₫";
+      return "0₫";
     }
 
     function endGame(isSurrender) {
@@ -1105,9 +1098,9 @@
       if (isSurrender) {
         title.innerText = "WALKED AWAY SAFELY";
         subtitle.innerText = "A wise and tactical decision on the hot seat!";
-        money.innerText = (currentQ > 0 ? "$" + moneyLadder[currentQ - 1] : "$0");
+        money.innerText = (currentQ > 0 ? moneyLadder[currentQ - 1] + "₫" : "0₫");
         icon.className = "fa-solid fa-hand-holding-dollar text-5xl md:text-6xl text-yellow-400 mb-4";
-        setMCDialogue("Thank you for playing with us today! You earned every penny of this prize!");
+        setMCDialogue("Thank you for playing with us today! You earned every bit of this prize!");
       } else {
         title.innerText = "GAME OVER";
         subtitle.innerText = "Unfortunately, that was the incorrect answer.";
@@ -1125,7 +1118,7 @@
       const modal = document.getElementById("modal-gameover");
       document.getElementById("end-title").innerText = "NEW MILLIONAIRE!";
       document.getElementById("end-subtitle").innerText = "Phenomenal! You mastered all 15 questions of the Unit 6 Review!";
-      document.getElementById("end-money").innerText = "$150,000";
+      document.getElementById("end-money").innerText = "250.000.000₫";
       document.getElementById("end-icon").className = "fa-solid fa-crown text-5xl md:text-6xl text-yellow-400 mb-4 animate-bounce";
       modal.classList.remove("hidden");
       setMCDialogue("UNBELIEVABLE! You conquered every single question to become our Grand Champion!");
@@ -1136,12 +1129,10 @@
       isAnswering = false;
       document.getElementById("modal-gameover").classList.add("hidden");
 
-      // Reset Lifelines
       ['btn-5050', 'btn-audience', 'btn-phone', 'btn-expert'].forEach(id => {
         document.getElementById(id).disabled = false;
       });
 
-      // Generate a brand new set of 15 randomized questions sorted by difficulty
       currentQuestions = generateGameQuestions();
       loadQuestion();
     }
